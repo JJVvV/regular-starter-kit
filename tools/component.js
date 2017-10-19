@@ -16,7 +16,7 @@ program.version('0.1.0')
         .usage('create component')
         .description('create component files')
 
-const DIRNAME = './src/component'
+const DIRNAME = './src/component/'
 program
     .command("component <cname>")
     .alias("cp")
@@ -33,16 +33,24 @@ program
     
         let opt = {}
         let name = path.basename(cname)
+        // 相对于DIRNAME的name
+        let rname = cname.replace(DIRNAME, '')
         argConfig.forEach((key) => {
             opt[key] = options[key]
         })
-        addFiles(cname, {...opt, name})
+        let componentSrc = path.join(path.relative(`./test/component/${rname}`, cname), 'component.js')
+        let utilSrc = path.join(path.relative(`./tools/template/test/${{name}}`, './test'), 'util.js')
+        console.log('utilSrc', utilSrc)
+        console.log('componentSrc', componentSrc)
+        let op = {...opt, name, componentSrc, utilSrc}
+        addFiles('./tools/template/{{name}}', cname, op)
+        addFiles('./tools/template/test/{{name}}', `./test/component/${rname}`, op)
+        addFiles('./tools/template/test/util.js', `./test/`, op)
     })
 
 program.parse(process.argv)
 
-function addFiles(to, options){
-    let from = './tools/template/{{name}}'
+function addFiles(from, to, options){
 
     loopSrc(from, undefined, (from) => {
         
@@ -50,6 +58,9 @@ function addFiles(to, options){
             let name = path.basename(from)
             let fileTo = path.join(to, name)
             createFolders(fileTo)
+            if(fs.existsSync(fileTo)){
+                return
+            }
             let d = data.toString()
             Object.keys(options).forEach((key) => {
                 let reg = new RegExp(`{{${key}}}`, 'g')
