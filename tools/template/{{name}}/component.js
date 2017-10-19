@@ -1,8 +1,8 @@
 /**
- * button 组件实现文件
+ * {{name}} 组件实现文件
  *
  * @version  1.0
- * @author   AlexLiu havedrowned@163.com
+ * @author   {{author}} {{email}}
  */
 
 import Regular from 'regularjs'
