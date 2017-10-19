@@ -2,15 +2,12 @@
  * button 组件实现文件
  *
  * @version  1.0
- * @author   AlexLiu havedrowned@163.com
+ * @author   AlexLiu <havedrowned@163.com>
  */
 
 import Regular from 'regularjs'
-import html from './component.html'
-import './component.scss'
 
 let Component = Regular.extend({
-    template: html,
 
     config(){
 
@@ -19,7 +16,7 @@ let Component = Regular.extend({
     init(){
 
     }
-    
+
 })
 
 export default Component

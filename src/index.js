@@ -1,4 +1,4 @@
-import Button from './component/button'
+import Button from './component/button/component.js'
 console.log(Button)
 
 let button = new Button({

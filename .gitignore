@@ -1,2 +1,5 @@
 .babelrc
 node_modules
+.vscode
+dist
+test

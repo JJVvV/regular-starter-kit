@@ -64,6 +64,13 @@ module.exports = {
                   }
                 }
             },
+
+            // 测试
+            {
+                test: /test\.js$/,
+                use: 'mocha-loader',
+                exclude: /node_modules/
+            }
            
 
             // {
