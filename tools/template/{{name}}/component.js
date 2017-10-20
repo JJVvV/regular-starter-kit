@@ -15,6 +15,11 @@ let Component = Regular.extend({
 
     init(){
 
+    },
+
+    //used for mocha cases, can be removed.
+    api_name(){
+        
     }
 
 })

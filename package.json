@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --open --port 3000",
     "jcm": "jsonc --watch --file es.js --ext .js",
     "component": "node ./tools/component.js component --author AlexLiu --email havedrowned@163.com",
-    "test": "mocha ./test/component/button/test.js --require babel-register"
+    "test": "node ./tools/test.js test"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

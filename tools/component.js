@@ -40,7 +40,7 @@ program
             opt[key] = options[key]
         })
         let componentSrc = path.join(path.relative(`./test/component/${rname}`, cname), 'component.js')
-        let utilSrc = path.join(path.relative(`./tools/template/test/${{name}}`, './test'), 'util.js')
+        let utilSrc = path.join(path.relative(`./test/component/${rname}`, './test'), 'util.js')
         console.log('utilSrc', utilSrc)
         console.log('componentSrc', componentSrc)
         let op = {...opt, name, componentSrc, utilSrc}
