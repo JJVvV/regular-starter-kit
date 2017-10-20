@@ -1,6 +1,6 @@
 # regular-starter-kit
 
-[Regular Starter Kit](https://github.com/JJVvV/regular-starter-kit) is a noptional boilerplate built with Regularjs, Webpack, Node.js.
+[Regular Starter Kit](https://github.com/JJVvV/regular-starter-kit) is a optional boilerplate built with Regularjs, Webpack, Node.js.
 
 [Regularjs](https://github.com/regularjs/regular)
 
