@@ -25,16 +25,17 @@ program
     .option("-e, --email <value>", "email")
    
     .action(function(cname, options) {
-        //only component name
-        if(path.basename(cname) === cname){
-            cname = path.join(DIRNAME, cname)
-        }
+        // //only component name
+        // if(path.basename(cname) === cname){
+            
+        // }
+        // 相对于DIRNAME的name
+        let rname = cname
+        cname = path.join(DIRNAME, cname)
         createFolders(cname)
-    
+        
         let opt = {}
         let name = path.basename(cname)
-        // 相对于DIRNAME的name
-        let rname = cname.replace(DIRNAME, '')
         argConfig.forEach((key) => {
             opt[key] = options[key]
         })
