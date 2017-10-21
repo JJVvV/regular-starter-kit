@@ -52,6 +52,7 @@
   "author": "Alex Liu",
   "license": "ISC",
   "dependencies": {
+    "redux": "^3.7.2",
     "regularjs": "^0.6.0-beta.7"
   }
 }
