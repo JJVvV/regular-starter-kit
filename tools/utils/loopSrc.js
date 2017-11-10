@@ -24,6 +24,7 @@ function loopSrc(from, filter=()=>{return true}, callback){
         
         if(filter(from)) callback(from)
     }
+    
 }
 
 module.exports = loopSrc

@@ -28,20 +28,20 @@ program
     .action(function(file, options) {
         
         if(path.extname(file) === ''){
-            file = path.join(file, 'test.js')
+            file = path.resolve(file, 'test.js')
         }
         let baseUrl = './test/component'
-        let url = path.join(baseUrl, file)
+        let url = path.resolve(baseUrl, file)
         if(!fs.existsSync(url)){
             console.log(`file ${url} not exist.`)
             return
         }
         console.log(`mocha ${url} --require babel-register ..........`)
         exec(`mocha ${url} --require babel-register --colors`, (err, stdout) => {
-            if(err){
-                console.err(err)
-                return
-            }
+            // if(err){
+            //     console.log(err)
+            //     // return
+            // }
             console.log(stdout)
         })
     })

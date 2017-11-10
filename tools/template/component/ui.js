@@ -7,10 +7,11 @@
 
 import html from './component.html'
 import './component.scss'
+import {{name}} from './component.js'
 
-let Component = {{name}}.$extends({
-    name     : 'u-{{name}}',
-    template : html
+let Component = {{name}}.extend({
+  name     : 'u-{{name}}',
+  template : html
 })
 
 export default Component

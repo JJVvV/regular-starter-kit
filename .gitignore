@@ -3,3 +3,5 @@ node_modules
 .vscode
 dist
 test
+coverage
+.nyc_output

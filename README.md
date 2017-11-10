@@ -24,6 +24,9 @@ npm install
 
     remove ComopnentName
 
+* `npm run cover`
+    show all component tests coverage
+    
 ## Test
 
 运行component命令生成组件的同时会生成对应的测试文件，测试文件统一保存在test文件夹下。测试用例可使用es6进行编写。

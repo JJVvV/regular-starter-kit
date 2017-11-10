@@ -9,7 +9,7 @@
 
 let path = require('path')
 let program = require('commander')
-let { addFiles, removeFiles} = require('./utils/file')
+let { addFiles, removeFiles, addTestEntry, removeImportFromTest} = require('./utils/file')
 let createFolders = require('./utils/createFolders')
 
 let argConfig = require('./config/argConfig.js')
@@ -46,13 +46,15 @@ program
         argConfig.forEach((key) => {
             opt[key] = options[key]
         })
+
         let componentSrc = path.join(path.relative(tSrc, cSrc), 'component.js')
         let utilSrc = path.join(path.relative(tSrc, './test'), 'util.js')
         
         let op = {...opt, name, componentSrc, utilSrc}
-        addFiles('./tools/template/{{name}}', cSrc, op)
-        addFiles('./tools/template/test/{{name}}', tSrc, op)
+        addFiles('./tools/template/component', cSrc, op)
+        addFiles('./tools/template/test/component', tSrc, op)
         addFiles('./tools/template/test/util.js', `./test/`, op)
+        addTestEntry('./test/test.js', cname)
     })
 
 program
@@ -66,15 +68,16 @@ program
 
         removeFiles(cSrc)
         removeFiles(tSrc)
+        removeImportFromTest('./test/test.js', cname)
     })
 program.parse(process.argv)
 
 function componentSrcByName(cname){
-    return path.join(DIRNAME, cname)
+    return path.resolve(DIRNAME, cname)
 }
 
 function testSrcByName(cname){
-    return path.join(TEST_DIRNAME, cname)
+    return path.resolve(TEST_DIRNAME, cname)
 }
 
 

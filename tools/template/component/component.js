@@ -5,24 +5,20 @@
  * @author   {{author}} <{{email}}>
  */
 
-import Regular from 'regularjs'
-
+let Regular = require("regularjs")
 let Component = Regular.extend({
+  config() {
 
-    config(){
+  },
 
-    },
+  init() {
+    
+  },
 
-    init(){
+  //used for mocha cases, can be removed.
+  api_name() {
 
-    },
-
-    //used for mocha cases, can be removed.
-    api_name(){
-        
-    }
-
+  }
 })
 
 export default Component
-

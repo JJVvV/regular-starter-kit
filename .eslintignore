@@ -1,3 +1,13 @@
 dist/*
 .idea/*
+test/*
+
+test/*
+tools/*
+package.json
+package-lock.json
+node_module/*
+
+
+
 
