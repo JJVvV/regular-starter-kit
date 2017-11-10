@@ -59,8 +59,3 @@ npm install
 │           ├── /ui.js/             # 组件导出（包含了逻辑、template、样式）
 
 ```
-
-
-## TODO
-
-* 结合Redux
